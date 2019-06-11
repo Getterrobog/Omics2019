@@ -1,0 +1,7 @@
+rmlist()
+ray<-read.csv("/Users/ivanlopez/Desktop/Daily Work/Dipterygonotus balteatus/ray.csv")
+library(ggplot2)
+ggplot(ray,aes(x=count))+geom_bar(col="blue", fill="blue")+labs(title ='Ray count frequency', x='P1 Ray Count', y='Frequency')+theme(title = element_text(face = "bold"))+theme(axis.title.x = element_text(face = "bold"))+theme(axis.title.y = element_text(face = "bold"))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
+ggplot(ray,aes(x=location, y=count))+geom_boxplot(col="blue")+stat_summary(fun.y=mean, colour="orange", geom="point", shape=18, size=3)+labs(title = 'Fin ray counts by location',x='Location', y='P1 Ray Count')+theme(title= element_text(face = "bold"))+theme(axis.title.x = element_text(face = "bold"))+theme(axis.title.y = element_text(face = "bold"))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
+res.aov<-aov(count~location, data=ray)
+summary(res.aov)
