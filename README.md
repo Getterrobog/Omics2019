@@ -1,2 +1,2 @@
 # Omics_2019
-Git hu doesnt suck that much.
+Git hub doesn't suck that much.
